@@ -57,7 +57,7 @@ const pokemonColors = {
 
 };
 
-function getRandomItem(arr) {
+const getRandomItem = (arr) => {
     const randomIndex = Math.floor(Math.random() * arr.length);
     const item = arr[randomIndex];
     return item;
@@ -108,7 +108,7 @@ function PokemonCard({ name, url, ...props }) {
                 raised={true}
                 style={{
                     border: `1px solid ${pokemonTypeColor}`,
-                    backgroundColor: "rgba(100, 100, 100, 0.2)"
+                    boxShadow: "5px 5px rgba(0, 0, 0, 0.5)"
                 }}
             >
                 <CardMedia

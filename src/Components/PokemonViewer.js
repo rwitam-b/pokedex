@@ -34,8 +34,8 @@ function PokemonViewer() {
       <Grid2 container spacing={2}>
         <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
           {pokemonList.length > 0 &&
-            <Masonry columns={4} spacing={2}>
-              {pokemonList.map((item, index) => (                
+            <Masonry columns={4} spacing={4}>
+              {pokemonList.map((item, index) => (
                 <MemoPokemonCard key={index} name={item.name} url={item.url} />
               ))}
             </Masonry>
@@ -49,6 +49,7 @@ function PokemonViewer() {
         <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
           <Button
             variant="contained"
+            style={{ backgroundColor: "#ffde00", color: "black" }}
             onClick={() => {
               setLoading(true);
               debouncedFetcher();
