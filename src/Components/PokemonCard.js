@@ -1,6 +1,6 @@
-import { useEffect, useState, memo, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+import { motion } from "framer-motion"
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -102,7 +102,12 @@ function PokemonCard({ name, url, ...props }) {
     }, []);
 
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            exit={{ opacity: 0 }}
+        >
             <Card
                 sx={{ maxWidth: 300 }}
                 raised={true}
@@ -153,12 +158,8 @@ function PokemonCard({ name, url, ...props }) {
                     }
                 </CardContent>
             </Card>
-        </>
+        </motion.div>
     );
 }
 
-const MemoPokemonCard = memo(function MemoPokemonCard({ name, url, ...props }) {
-    return PokemonCard({ name, url, ...props });
-});
-
-export default MemoPokemonCard;
+export default PokemonCard;

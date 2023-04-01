@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { Outlet } from "react-router-dom";
 import Container from '@mui/material/Container';
 import PokemonViewer from './PokemonViewer';
 import Divider from '@mui/material/Divider';

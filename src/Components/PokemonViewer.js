@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import debounce from 'lodash.debounce';
 import { endpoints } from '../endpoints';
-import MemoPokemonCard from './PokemonCard';
+import PokemonCard from './PokemonCard';
 
 function PokemonViewer() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -36,7 +36,7 @@ function PokemonViewer() {
           {pokemonList.length > 0 &&
             <Masonry columns={4} spacing={4}>
               {pokemonList.map((item, index) => (
-                <MemoPokemonCard key={index} name={item.name} url={item.url} />
+                <PokemonCard key={index} name={item.name} url={item.url} />
               ))}
             </Masonry>
           }
@@ -56,6 +56,9 @@ function PokemonViewer() {
             }}
           >Load More!
           </Button>
+        </Grid2>
+        <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
+          &nbsp;
         </Grid2>
       </Grid2>
     </>
