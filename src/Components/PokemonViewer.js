@@ -1,11 +1,11 @@
-import { useEffect, useState, memo, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Masonry from '@mui/lab/Masonry';
 import Button from '@mui/material/Button';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import debounce from 'lodash.debounce';
 import { endpoints } from '../endpoints';
-import PokemonCard from './PokemonCard';
+import MemoPokemonCard from './PokemonCard';
 
 function PokemonViewer() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -35,10 +35,8 @@ function PokemonViewer() {
         <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
           {pokemonList.length > 0 &&
             <Masonry columns={4} spacing={2}>
-              {pokemonList.map((item, index) => (
-                memo(item =>
-                  <PokemonCard key={index} name={item.name} url={item.url} />
-                )
+              {pokemonList.map((item, index) => (                
+                <MemoPokemonCard key={index} name={item.name} url={item.url} />
               ))}
             </Masonry>
           }
