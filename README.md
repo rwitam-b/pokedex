@@ -9,6 +9,13 @@ pokedex style web application
 git clone https://github.com/rwitam-b/pokedex.git
 ```
 
+Get inside cloned folder
+
+```sh
+cd pokedex
+```
+
+
 ## Install dependencies
 
 ```sh
